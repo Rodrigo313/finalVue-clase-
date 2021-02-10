@@ -1,7 +1,10 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Inicio</router-link> |
+    <router-link to="/clasificacion">Clasificación</router-link> |
+    <router-link to="/jornadas">Jornadas</router-link> |
+    <router-link to="/equipos">Equipos</router-link> |
+    <router-link to="/jugadores">Jugadores</router-link>
   </div>
   <router-view/>
 </template>
@@ -17,6 +20,7 @@
 
 #nav {
   padding: 30px;
+  float: left;
 }
 
 #nav a {
