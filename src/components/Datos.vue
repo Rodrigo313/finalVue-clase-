@@ -6,22 +6,31 @@
           <td>{{cadaElemento.scores}}</td>
         </tr>
       </table>
+      <button @click="sacarDatos">Sacar datos</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  data(){
+    return{
+      array:[]
+    }
+  },
    props:[
      "nombreEquipo"
    ],
-      created(nombreEquipo){
-        console.log("lmao")
+   methods:{
+     sacarDatos(nombreEquipo){
+      console.log("hijo recibe: " + nombreEquipo)
         axios.get('http://localhost:3000/players?team=' + nombreEquipo)
         .then(response =>{
           this.array = response.data;
         } )
         .catch(response => alert("Errores: " + response.status));
-    }
+     }
+   }
 };
 </script>
 

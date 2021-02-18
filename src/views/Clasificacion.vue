@@ -9,16 +9,18 @@
         </table>
     </div>
     <div>
-        <Datos/>
+        <Datos :nombreEquipo="variable"></Datos>
     </div>
 </template>
 
 <script>
+import Datos from '@/components/Datos.vue'
 import axios from "axios";
 export default {
     data(){
         return{
-            array:[]
+            array:[],
+            variable: ''
         }
     },
     created(){
@@ -31,8 +33,12 @@ export default {
     name: 'Clasificacion',
     methods:{
         pasarNombre(dato){
+            console.log("padre pasa este dato: " + dato)
             this.variable = dato;
         }
+    },
+    components:{
+        Datos
     }
 }
 </script>
