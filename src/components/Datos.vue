@@ -6,7 +6,7 @@
           <td>{{cadaElemento.scores}}</td>
         </tr>
       </table>
-      <button @click="sacarDatos">Sacar datos</button>
+    
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
    props:[
      "nombreEquipo"
    ],
+   watch:{
+        nombreEquipo(nuevo){ 
+            this.array = this.sacarDatos(nuevo);
+        }
+    },
    methods:{
      sacarDatos(nombreEquipo){
       console.log("hijo recibe: " + nombreEquipo)
@@ -35,5 +40,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

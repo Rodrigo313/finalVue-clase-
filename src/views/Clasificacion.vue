@@ -8,7 +8,7 @@
             </tr>
         </table>
     </div>
-    <div>
+    <div class="componente">
         <Datos :nombreEquipo="variable"></Datos>
     </div>
 </template>
@@ -45,13 +45,17 @@ export default {
 
 <style scoped>
 .clasificacion{
-    width: 1000px;
+    width: 450px;
+    height: 1000px;
+    background-color: cadetblue;
     float: right;
     margin-top: 100px;
+    float: left;
 }
-
-.titulo{
-  margin-right: 800px;
-  float: left;
+.componente{
+    background-color: yellow;
+    width: 450px;
+    height: 1000px;
+    float: right;
 }
 </style>
