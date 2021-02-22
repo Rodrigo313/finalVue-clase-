@@ -4,17 +4,11 @@
         <table class="tabla">
             <tr class="tdd" v-for="(cadaElemento, nn) in array" :key="nn" @click="pasarNombre(cadaElemento.name)">
                 <td> {{cadaElemento.name}}</td>
-                <td>{{cadaElemento.points}}</td>
             </tr>
         </table>
     </div>
     <div class="componente">
         <DatosJugadores :nombreEquipo="variable"></DatosJugadores>
-    </div>
-    <div class="datosJugador">
-        <DatosJugadores :id="id"></DatosJugadores>
-        <DatosJugadores :team="team"></DatosJugadores>
-        <DatosJugadores :scores="scores"></DatosJugadores>
     </div>
 </template>
 
