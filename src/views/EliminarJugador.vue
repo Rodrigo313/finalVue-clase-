@@ -3,11 +3,12 @@
         <select class="equipos">
             <option value="0">Equipos</option>
             <option v-for="(equipos, nn) in arrayEquipos" :key="nn">{{equipos.name}}</option>
-        </select><br><br>
+        </select>
         <select class="jugadores">
             <option value="0">Jugadores</option>
             <option v-for="(jugadores, nn) in arrayJugadores" :key="nn">{{jugadores.name}}</option>
-        </select><br><br>
+        </select>
+        <button class="boton">Eliminar Jugador</button>
     </div>
 </template>
 
@@ -52,8 +53,11 @@ export default {
     .jugadores{
         float: left;
         margin-top: 200px;
+        margin-left: 50px;
     }
     .boton{
         float: left;
+        margin-top: 200px;
+        margin-left: 50px;
     }
 </style>
