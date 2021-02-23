@@ -1,24 +1,30 @@
 <template>
     <div class="eliminacion">
-        <select class="equipos">
-            <option value="0">Equipos</option>
-            <option v-for="(equipos, nn) in arrayEquipos" :key="nn">{{equipos.name}}</option>
-        </select>
-        <select class="jugadores">
-            <option value="0">Jugadores</option>
-            <option v-for="(jugadores, nn) in arrayJugadores" :key="nn">{{jugadores.name}}</option>
-        </select>
-        <button class="boton">Eliminar Jugador</button>
+        <form>
+            <fieldset>
+                <legend>Eliminar Jugador</legend>
+                <select class="equipos" v-model="name">
+                    <option :value="equipos.name" v-for="(equipos, nn) in arrayEquipos" :key="nn">{{equipos.name}}</option>
+                </select>
+                    <EliminarJug class="jugadores" :nombreEquipo="name"></EliminarJug>
+                <button class="boton" @click="borrarJugador()">Eliminar Jugador</button>
+            </fieldset>
+        </form>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import EliminarJug from '@/components/EliminarJug.vue'
 export default {
     data(){
         return{
             arrayEquipos:[],
-            arrayJugadores:[]
+            arrayJugadores:[],
+            id:'',
+            name:'',
+            team:'',
+            scores:''
         }
     },
     methods:{
@@ -36,12 +42,17 @@ export default {
             } )
             .catch(response => alert("Errores: " + response.status));
         },
+        borrarJugador(){
+            axios.delete("http://localhost:3000/players/" + this.id);
+        }
     },
     created(){
             this.equipos();
             this.jugadores();
     },
-    name: 'EliminarJugador',
+    components:{
+        EliminarJug
+    }
 }
 </script>
 

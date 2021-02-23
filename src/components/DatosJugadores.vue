@@ -58,9 +58,9 @@ export default {
             id:this.id,
             name:this.name,
             team:this.team,
-            scores: parseInt(this.scores) + this.anadirGol
+            scores: parseInt(this.scores) + parseInt(this.anadirGol)
         };
-        axios.put("http://localhost:3000/players" + this.id, post)
+        axios.put("http://localhost:3000/players/" + this.id, post)
      },
      borrarJugador(){
         axios.delete("http://localhost:3000/players" + this.id);

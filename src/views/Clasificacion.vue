@@ -33,7 +33,6 @@ export default {
     name: 'Clasificacion',
     methods:{
         pasarNombre(dato){
-            console.log("padre pasa este dato: " + dato)
             this.variable = dato;
         }
     },
@@ -45,17 +44,16 @@ export default {
 
 <style scoped>
 .clasificacion{
-    width: 450px;
+    width: 400px;
     height: 1000px;
-    background-color: cadetblue;
     float: right;
     margin-top: 100px;
     float: left;
 }
 .componente{
-    background-color: yellow;
-    width: 450px;
+    width: 400px;
     height: 1000px;
     float: right;
+    margin-top: 100px;
 }
 </style>
